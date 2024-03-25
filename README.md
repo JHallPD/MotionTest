@@ -26,9 +26,9 @@ Passing the access token via command line as the first argv. In the same way a t
 
 When rate limited I have assumed it is no longer desired to request every 2 seconds as that is just digging a deeper hole in the facebook rate limit.
 
-a request rate of 1800/hr with a limit of 200/hr means this can quickly dig a large hole. I can see the count slowly decreases over time so I have set it to wait a minute before retrying when rate limited
+a 2 second request rate totaling 1800/hr with a limit of 200/hr means the rate limit is expected to be hit quickly. I can see the count slowly decreases over time so I have set it to wait a minute before retrying when rate limited.
 
-This is on the assumption the application wont be run in multiple instances without additional rate limits. I have also assumed that the request every 2 seconds is on the condition of not being rate limited.
+This is on the assumption the application wont be run in multiple instances without additional rate limit increases.
 
-the wait time is easily configurable and set to 1 minute for ease of testing. 1-2 calls will be freed up if not over the limit in a minutes time.
+the wait time is configurable and set to 1 minute for ease of testing. 1-2 calls will be freed up if not over the limit in a minutes time.
 
